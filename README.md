@@ -5,10 +5,10 @@ Note: This class has little/no error handling and is for demonstration purposes 
 
 # Examples
 
-`//Authenticating to SharePoint Online.
+**//Authenticating to SharePoint Online.**
 
-SharePointOnlineCSOM spObject = new SharePointOnlineCSOM();
-ClientContext context = spObject.ConnectToSharePoint("https://examplesite.sharepoint.com/demosite", "user@domain.com", "some_password");
+`SharePointOnlineCSOM spObject = new SharePointOnlineCSOM();
+ClientContext context = spObject.ConnectToSharePoint("https://examplesite.sharepoint.com/demosite", "user@domain.com", "some_password");`
 
 //Creating a Document Library
 
@@ -48,4 +48,4 @@ foreach (KeyValuePair<int, string> entry in dict)
     }
 }
 int itemId = spObject.GetItemId(context, "My Document Library", "test.doc");
-spObject.ApplyLookupColumnMetadataToSharePointFile(context, "My Document Library", "Day", itemId, listItemId);`
+spObject.ApplyLookupColumnMetadataToSharePointFile(context, "My Document Library", "Day", itemId, listItemId);
