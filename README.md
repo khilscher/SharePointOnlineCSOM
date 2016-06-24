@@ -5,9 +5,9 @@ Note: This class has little/no error handling and is for demonstration purposes 
 
 # Examples
 
-//Authenticating to SharePoint Online.
+'//Authenticating to SharePoint Online.
 SharePointOnlineCSOM spObject = new SharePointOnlineCSOM();
-ClientContext context = spObject.ConnectToSharePoint("https://examplesite.sharepoint.com/demosite", "user@domain.com", "some_password");
+ClientContext context = spObject.ConnectToSharePoint("https://examplesite.sharepoint.com/demosite", "user@domain.com", "some_password");'
 
 //Creating a Document Library
 spObject.CreateDocumentLibrary(context, "My Document Library");
