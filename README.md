@@ -1,7 +1,7 @@
 # SharePoint Online CSOM Class
 A C# class to demonstrate working with SharePoint Online using Client Side Object Model (CSOM).
 
-Note: This class has little/no error handling and is for demonstration purposes only. There are no warranties, expressed or implied.
+**Note: This class has little/no error handling and is for demonstration purposes only. There are no warranties, expressed or implied.**
 
 ## Examples
 ### Example 1
