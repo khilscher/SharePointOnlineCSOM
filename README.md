@@ -3,7 +3,7 @@ A C# class to demonstrate working with SharePoint Online using Client Side Objec
 
 Note: This class has little/no error handling and is for demonstration purposes only. There are no warranties, expressed or implied.
 
-# Examples
+## Examples
 
 **//Authenticating to SharePoint Online.**
 
@@ -37,28 +37,28 @@ Note: This class has little/no error handling and is for demonstration purposes 
 `spObject.ApplyTextColumnMetadataToSharePointFile(context, "My Document Library", "Test Column", "Test value", itemId);`
 
 **//Get the items in a SharePoint lookup list, select an item from this list and apply the value to the lookup column in a Document Library**
+```c#
+int listItemId = 0;
 
-`int listItemId = 0;`
+string lookupListName = "Days of the Week";
 
-`string lookupListName = "Days of the Week";`
+IDictionary<int, string> dict = spObject.GetLookupListItems(context, lookupListName);
 
-`IDictionary<int, string> dict = spObject.GetLookupListItems(context, lookupListName);`
+foreach (KeyValuePair<int, string> entry in dict)
 
-`foreach (KeyValuePair<int, string> entry in dict)`
+{
 
-`{`
-
-    `if (entry.Value.ToString() == "Tuesday")`
+    if (entry.Value.ToString() == "Tuesday")
     
-    `{`
+    {
         
-        `listItemId = entry.Key;`
+        listItemId = entry.Key;
         
-    `}`
+    }
     
-`}`
+}
 
-`int itemId = spObject.GetItemId(context, "My Document Library", "test.doc");`
+int itemId = spObject.GetItemId(context, "My Document Library", "test.doc");
 
-`spObject.ApplyLookupColumnMetadataToSharePointFile(context, "My Document Library", "Day", itemId, listItemId);`
-
+spObject.ApplyLookupColumnMetadataToSharePointFile(context, "My Document Library", "Day", itemId, listItemId);
+```
