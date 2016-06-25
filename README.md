@@ -15,29 +15,33 @@ ClientContext context = spObject.ConnectToSharePoint("https://examplesite.sharep
 //Creating a Document Library
 spObject.CreateDocumentLibrary(context, "My Document Library");
 ```
-
-**//Adding a text column to a Document Library**
-
-`spObject.AddTextColumnToDocumentLibrary(context, "My Document Library", "Location");`
-
-**//Adding a lookup column to a Document Library that is connected to a list called "Days of the Week"**
-
-`spObject.AddLookupColumnToDocumentLibrary(context, "My Document Library", "Days of the Week", "Day");`
-
-**//Copy a file from one Document Library to another Document Library**
-
-`spObject.CopyDocument(context, "My Document Library", "My Document Library 2", "test.doc");`
-
-**//Upload a local file to a SharePoint Document Library**
-
-`spObject.UploadFileToSharePoint(context, "My Document Library", "c:\\temp\\test.csv", true);`
-
-**//Get an itemId for a Document in a Document Library and then apply a value to it on a column**
-
-`int itemId = spObject.GetItemId(context, "My Document Library", "test2.json");`
-`spObject.ApplyTextColumnMetadataToSharePointFile(context, "My Document Library", "Test Column", "Test value", itemId);`
-
-**//Get the items in a SharePoint lookup list, select an item from this list and apply the value to the lookup column in a Document Library**
+### Example 3
+```c#
+//Adding a text column to a Document Library
+spObject.AddTextColumnToDocumentLibrary(context, "My Document Library", "Location");
+```
+### Example 4
+```c#
+//Adding a lookup column to a Document Library that is connected to a list called "Days of the Week"
+spObject.AddLookupColumnToDocumentLibrary(context, "My Document Library", "Days of the Week", "Day");
+```
+### Example 5
+```c#
+//Copy a file from one Document Library to another Document Library
+spObject.CopyDocument(context, "My Document Library", "My Document Library 2", "test.doc");
+```
+### Example 6
+```c#
+//Upload a local file to a SharePoint Document Library
+spObject.UploadFileToSharePoint(context, "My Document Library", "c:\\temp\\test.csv", true);
+```
+### Example 7
+```c#
+//Get an itemId for a Document in a Document Library and then apply a value to it on a column
+int itemId = spObject.GetItemId(context, "My Document Library", "test2.json");
+spObject.ApplyTextColumnMetadataToSharePointFile(context, "My Document Library", "Test Column", "Test value", itemId);
+```
+### Example 8
 ```c#
 //Get the items in a SharePoint lookup list, select an item from this list and apply the value to the lookup column in a Document Library
 int listItemId = 0;
