@@ -8,6 +8,7 @@ Note: This class has little/no error handling and is for demonstration purposes 
 **//Authenticating to SharePoint Online.**
 
 `SharePointOnlineCSOM spObject = new SharePointOnlineCSOM();`
+
 `ClientContext context = spObject.ConnectToSharePoint("https://examplesite.sharepoint.com/demosite", "user@domain.com", "some_password");`
 
 **//Creating a Document Library**
@@ -35,7 +36,7 @@ Note: This class has little/no error handling and is for demonstration purposes 
 `int itemId = spObject.GetItemId(context, "My Document Library", "test2.json");`
 `spObject.ApplyTextColumnMetadataToSharePointFile(context, "My Document Library", "Test Column", "Test value", itemId);`
 
-**//Get the items in a SharePoin lookup list, select an item from this list and apply the value to the lookup column in a Document Library**
+**//Get the items in a SharePoint lookup list, select an item from this list and apply the value to the lookup column in a Document Library**
 
 `int listItemId = 0;`
 
@@ -49,8 +50,8 @@ Note: This class has little/no error handling and is for demonstration purposes 
 
     `if (entry.Value.ToString() == "Tuesday")`
     
-   ` {`
-   
+    `{`
+        
         `listItemId = entry.Key;`
         
     `}`
