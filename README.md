@@ -38,27 +38,17 @@ Note: This class has little/no error handling and is for demonstration purposes 
 
 **//Get the items in a SharePoint lookup list, select an item from this list and apply the value to the lookup column in a Document Library**
 ```c#
+//Get the items in a SharePoint lookup list, select an item from this list and apply the value to the lookup column in a Document Library
 int listItemId = 0;
-
 string lookupListName = "Days of the Week";
-
 IDictionary<int, string> dict = spObject.GetLookupListItems(context, lookupListName);
-
 foreach (KeyValuePair<int, string> entry in dict)
-
 {
-
     if (entry.Value.ToString() == "Tuesday")
-    
     {
-        
         listItemId = entry.Key;
-        
     }
-    
 }
-
 int itemId = spObject.GetItemId(context, "My Document Library", "test.doc");
-
 spObject.ApplyLookupColumnMetadataToSharePointFile(context, "My Document Library", "Day", itemId, listItemId);
 ```
