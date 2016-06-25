@@ -4,16 +4,17 @@ A C# class to demonstrate working with SharePoint Online using Client Side Objec
 Note: This class has little/no error handling and is for demonstration purposes only. There are no warranties, expressed or implied.
 
 ## Examples
-
-**//Authenticating to SharePoint Online.**
-
-`SharePointOnlineCSOM spObject = new SharePointOnlineCSOM();`
-
-`ClientContext context = spObject.ConnectToSharePoint("https://examplesite.sharepoint.com/demosite", "user@domain.com", "some_password");`
-
-**//Creating a Document Library**
-
-`spObject.CreateDocumentLibrary(context, "My Document Library");`
+### Example 1
+```c#
+//Authenticating to SharePoint Online.
+SharePointOnlineCSOM spObject = new SharePointOnlineCSOM();
+ClientContext context = spObject.ConnectToSharePoint("https://examplesite.sharepoint.com/demosite", "user@domain.com", "some_password");
+```
+### Example 2
+```c#
+//Creating a Document Library
+spObject.CreateDocumentLibrary(context, "My Document Library");
+```
 
 **//Adding a text column to a Document Library**
 
